@@ -66,6 +66,14 @@ const io = new Server(server, {
 });
 
 app.use(
+  cors({
+    origin: ["https://neighbourhoodwatchapp2.vercel.app"],
+    credentials: true, // if you use cookies or auth headers
+  })
+);
+
+
+app.use(
   "/uploads",
   express.static("uploads", {
     setHeaders: (res, path, stat) => {
