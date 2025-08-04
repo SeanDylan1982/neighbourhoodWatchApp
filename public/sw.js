@@ -1,5 +1,5 @@
 // Service Worker for Push Notifications
-const CACHE_NAME = 'neighborhood-app-v1';
+const CACHE_NAME = 'neighborhoodwatchapp-v1';
 const urlsToCache = [
   '/',
   '/static/js/bundle.js',
