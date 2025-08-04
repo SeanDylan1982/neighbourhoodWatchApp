@@ -1,5 +1,8 @@
 const express = require("express");
-const cors = require("cors");
+const allowedOrigins = [
+  "http://localhost:3000", // Vite dev
+  "https://neighbourhoodwatchapp2.vercel.app",
+];
 const helmet = require("helmet");
 const compression = require("compression");
 const rateLimit = require("express-rate-limit");
@@ -67,10 +70,17 @@ const io = new Server(server, {
 
 app.use(
   cors({
-    origin: ["https://neighbourhoodwatchapp2.vercel.app"],
-    credentials: true, // if you use cookies or auth headers
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error("CORS not allowed for this origin: " + origin));
+      }
+    },
+    credentials: true,
   })
 );
+
 
 
 app.use(
