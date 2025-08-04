@@ -2,6 +2,9 @@
 
 A comprehensive community-focused mobile application for neighbourhood safety, communication, and local engagement. Built with React, Node.js, PostgreSQL, and Socket.io for real-time features.
 
+### Live Preview
+[NeighbourhoodWatchApp(https://neighbourhoodwatchapp2.vercel.app/login)]
+
 ## 🏘️ Features
 
 ### Core Functionality
