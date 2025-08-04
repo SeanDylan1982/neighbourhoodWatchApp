@@ -65,7 +65,7 @@ const NoticeBoard = () => {
 
   const fetchNotices = useCallback(async () => {
     try {
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const token = localStorage.getItem('token');
       
       if (!token) {
@@ -127,7 +127,7 @@ const NoticeBoard = () => {
 
   const fetchSingleNotice = useCallback(async (id) => {
     try {
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const token = localStorage.getItem('token');
       
       const response = await fetch(`${baseURL}/api/notices/${id}`, {
@@ -267,7 +267,7 @@ const NoticeBoard = () => {
         formData.append('media', file);
       });
 
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/notices`, {
         method: 'POST',
         headers: {
@@ -350,7 +350,7 @@ const NoticeBoard = () => {
     }
 
     try {
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/moderation/report`, {
         method: 'POST',
         headers: {

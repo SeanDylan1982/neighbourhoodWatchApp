@@ -181,7 +181,7 @@ const Reports = () => {
         formData.append('media', file);
       });
 
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/reports`, {
         method: 'POST',
         headers: {
@@ -303,7 +303,7 @@ const Reports = () => {
     }
 
     try {
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/moderation/report`, {
         method: 'POST',
         headers: {

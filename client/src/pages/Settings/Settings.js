@@ -196,7 +196,7 @@ const Settings = () => {
 
     try {
       setSaving(true);
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/settings/password`, {
         method: 'PUT',
         headers: {
@@ -320,7 +320,7 @@ const Settings = () => {
   const handleDeleteAccount = async () => {
     try {
       setSaving(true);
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await fetch(`${baseURL}/api/settings/account`, {
         method: 'DELETE',
         headers: {

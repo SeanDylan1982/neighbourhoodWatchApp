@@ -1,7 +1,8 @@
 import { useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-const API_BASE_URL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+const API_BASE_URL =
+  process.env.REACT_APP_API_URL || "https://neighbourhoodwatchapp.onrender.com";
 
 /**
  * Custom hook for managing terms and conditions acceptance

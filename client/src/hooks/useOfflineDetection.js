@@ -71,7 +71,9 @@ const useOfflineDetection = () => {
       if (navigator.onLine && !isOnline) {
         try {
           // Try to fetch a small resource to verify actual connectivity
-          const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+          const baseURL =
+            process.env.REACT_APP_API_URL ||
+            "https://neighbourhoodwatchapp.onrender.com";
           const response = await fetch(`${baseURL}/api/health`, {
             method: 'HEAD',
             cache: 'no-cache',

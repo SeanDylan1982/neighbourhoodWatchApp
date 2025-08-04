@@ -273,4 +273,3 @@ const useDatabaseErrorHandler = (options = {}) => {
 };
 
 export default useDatabaseErrorHandler;
-</content>

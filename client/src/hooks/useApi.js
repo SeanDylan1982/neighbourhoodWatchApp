@@ -10,7 +10,9 @@ const useApi = () => {
 
   const makeRequest = useCallback(async (url, options = {}) => {
     // Ensure we use the correct base URL for API calls
-    const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+    const baseURL =
+      process.env.REACT_APP_API_URL ||
+      "https://neighbourhoodwatchapp.onrender.com";
     const fullUrl = url.startsWith('http') ? url : `${baseURL}${url}`;
 
     // Check if offline
@@ -106,7 +108,9 @@ const useApi = () => {
   }, [handleError, clearError, isOnline]);
 
   const makeRequestWithRetry = useCallback(async (url, options = {}, maxRetries = 3) => {
-    const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+    const baseURL =
+      process.env.REACT_APP_API_URL ||
+      "https://neighbourhoodwatchapp.onrender.com";
     const fullUrl = url.startsWith('http') ? url : `${baseURL}${url}`;
     return retryWithErrorHandling(
       () => makeRequest(url, options),

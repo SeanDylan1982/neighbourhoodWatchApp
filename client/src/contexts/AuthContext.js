@@ -3,7 +3,7 @@ import axios from 'axios';
 
 // Configure axios base URL
 // Force the base URL to be exactly http://localhost:5001
-axios.defaults.baseURL = 'http://localhost:5001';
+axios.defaults.baseURL = "https://neighbourhoodwatchapp.onrender.com";
   
 // Add request/response interceptors for debugging
 axios.interceptors.request.use(request => {

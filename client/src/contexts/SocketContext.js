@@ -28,15 +28,19 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user && token) {
-      const newSocket = io(process.env.REACT_APP_API_URL || 'http://localhost:5001', {
-        auth: {
-          token: token
-        },
-        reconnectionAttempts: 10,
-        reconnectionDelay: 1000,
-        reconnectionDelayMax: 10000,
-        timeout: 20000
-      });
+      const newSocket = io(
+        process.env.REACT_APP_API_URL ||
+          "https://neighbourhoodwatchapp.onrender.com",
+        {
+          auth: {
+            token: token,
+          },
+          reconnectionAttempts: 10,
+          reconnectionDelay: 1000,
+          reconnectionDelayMax: 10000,
+          timeout: 20000,
+        }
+      );
 
       newSocket.on('connect', () => {
         console.log('Connected to server');

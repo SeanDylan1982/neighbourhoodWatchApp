@@ -68,7 +68,7 @@ const Profile = () => {
       // Fetch user statistics
       const fetchStats = async () => {
         try {
-          const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+          const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
           const response = await axios.get(`${baseURL}/api/statistics/profile`);
           setStats(response.data);
         } catch (error) {
@@ -87,7 +87,7 @@ const Profile = () => {
 
   const handleSave = async () => {
     try {
-      const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+      const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
       const response = await axios.put(`${baseURL}/api/users/profile`, profileData, {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('token')}`

@@ -129,7 +129,9 @@ class PortManager {
     
     // Test backend health
     try {
-      const response = await fetch('http://localhost:5001/api/health');
+      const response = await fetch(
+        "https://neighbourhoodwatchapp.onrender.com/api/health"
+      );
       if (response.ok) {
         console.log('✅ Backend server is running and healthy');
       } else {

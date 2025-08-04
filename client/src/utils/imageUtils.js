@@ -16,7 +16,7 @@ export const getFullImageUrl = (imageUrl) => {
   }
   
   // If it's a relative URL, prepend the API base URL
-  const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+  const baseURL = process.env.REACT_APP_API_URL || 'https://neighbourhoodwatchapp.onrender.com';
   
   // Ensure the URL starts with /
   const normalizedUrl = imageUrl.startsWith('/') ? imageUrl : `/${imageUrl}`;

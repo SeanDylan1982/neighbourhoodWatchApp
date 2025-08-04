@@ -113,7 +113,9 @@ class AppStarter {
     
     // Test backend health
     try {
-      const response = await fetch('http://localhost:5001/api/health');
+      const response = await fetch(
+        "https://neighbourhoodwatchapp.onrender.com/api/health"
+      );
       if (response.ok) {
         console.log('✅ Backend server is healthy');
         return true;
@@ -168,14 +170,17 @@ class AppStarter {
     
     try {
       // Test login
-      const loginResponse = await fetch('http://localhost:5001/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email: 'admin@neighbourhood.com',
-          password: 'admin123'
-        })
-      });
+      const loginResponse = await fetch(
+        "https://neighbourhoodwatchapp.onrender.com/api/auth/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            email: "admin@neighbourhood.com",
+            password: "admin123",
+          }),
+        }
+      );
       
       if (!loginResponse.ok) {
         console.log('❌ Login test failed');
@@ -186,12 +191,15 @@ class AppStarter {
       const token = loginData.token;
       
       // Test notices endpoint
-      const noticesResponse = await fetch('http://localhost:5001/api/notices', {
-        headers: {
-          'Authorization': `Bearer ${token}`,
-          'Content-Type': 'application/json'
+      const noticesResponse = await fetch(
+        "https://neighbourhoodwatchapp.onrender.com/api/notices",
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+            "Content-Type": "application/json",
+          },
         }
-      });
+      );
       
       if (!noticesResponse.ok) {
         console.log('❌ Notices API test failed');
@@ -281,7 +289,9 @@ class AppStarter {
       if (fullStackOk) {
         console.log('\n🎉 Application started successfully!');
         console.log('📱 Frontend: http://localhost:3000');
-        console.log('🔧 Backend: http://localhost:5001');
+        console.log(
+          "🔧 Backend: http://https://neighbourhoodwatchapp.onrender.com"
+        );
         console.log('\n💡 Login credentials:');
         console.log('   Email: admin@neighbourhood.com');
         console.log('   Password: admin123');

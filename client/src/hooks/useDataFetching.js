@@ -39,7 +39,9 @@ const useDataFetching = (options = {}) => {
         }
 
         // Ensure we use the correct base URL for API calls
-        const baseURL = process.env.REACT_APP_API_URL || 'http://localhost:5001';
+        const baseURL =
+          process.env.REACT_APP_API_URL ||
+          "https://neighbourhoodwatchapp.onrender.com";
         const fullUrl = url.startsWith('http') ? url : `${baseURL}${url}`;
 
         const defaultOptions = {
