@@ -29,7 +29,7 @@
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.48.2",
     "react-image-crop": "^11.0.4",
-    "react-router-dom": "^6.20.1",
+    "react-router-dom": "^6.30.3",
     "react-scripts": "5.0.1",
     "reactdom": "^2.0.0",
     "recharts": "^3.1.0",
